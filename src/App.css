@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    
+    
+}
+
+.home,.signup{
+    opacity: 1;
+    animation: display 1.5s ease-in;
+    
+}
+@keyframes display{
+    0%{
+        opacity: 0;
+
+    }
+    25%{
+        opacity: 0.1;
+    }
+    50%{
+        opacity: 0.25;
+
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+@keyframes displayFade{
+    0%{
+        opacity: 0.5;
+
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}

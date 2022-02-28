@@ -1,0 +1,130 @@
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  $navbar_font_size:1rem;
+  $main_text_color: rgb(117, 112, 112);
+  $navbar_background_color:rgba($color: #000000, $alpha:0.4);
+  .navbar {
+      
+  
+      
+    font-size: $navbar_font_size;
+    //main navbar styling
+    position: fixed; 
+    @include flex-between;
+    width: 100vw;
+    padding: 0.5rem 5vw;
+    color:$main_text_color;
+    font-weight: 600;
+    z-index: 4;
+    transition: .4s ease-out;
+    &__logo{
+     &__title{
+       display: block;
+       text-align: center;
+       font-style: italic;
+       font-family: 'Road Rage', cursive;
+       font-size: 2rem;
+       
+  
+     }
+     &__text{
+       color: rgb(26, 26, 128);
+       text-decoration: none;
+       font-family: 'Pacifico', cursive;
+     }
+    }
+  
+    &__links {  
+            width: 80%;
+            @include flex-center;
+        list-style: none;
+        &--li:last-child{
+            display:none
+        }
+        
+    
+      &--li>a {
+        text-decoration: none;
+        color: inherit;
+        margin: 0rem 2rem;
+        
+        padding: 1rem .5rem;
+        &:hover{
+            color: rgb(26, 26, 128);
+        }
+      }
+      &--li #selected{
+          color: rgb(26, 26, 128);
+          font-weight: 700;
+      }
+      
+    }
+    &__icon{
+  
+        position: relative;
+        padding: 26px 10px;
+        cursor: pointer;
+        z-index: 1;
+        display: none;
+  
+        &__line{
+          display: block;
+          width: 20px;
+          height: 2px;
+          position: relative;
+          background-color: black;
+          border-radius: 4px;
+          &::before,&::after{
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              border-radius: 4px;
+              background-color: black;
+              transition: background-color .8s ease;
+          }
+          &:before{
+              transform: translateY(-5px);
+          }
+          &:after{
+              transform: translateY(5px);
+          }
+  
+        }
+    }
+    #navbar__btn{
+      display: none;
+  }
+  //add a class for the scroll effect
+  &.scroll{
+      height: 50px;
+      background-color:$navbar_background_color;
+      color: white;
+      
+  }
+  &__btn--login{
+      text-decoration: none;
+      color: white;
+      background-color: rgb(26, 26, 128);
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.2rem;
+      
+      box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.4);
+      font-weight: bold;
+      order:2;
+
+
+  }
+    
+  }
+  
+  
+  

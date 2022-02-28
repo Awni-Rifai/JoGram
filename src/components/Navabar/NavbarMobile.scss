@@ -1,0 +1,158 @@
+@media screen and (max-width: 767px) {
+    
+    .navbar {
+        
+      width: 100%;
+      padding: 1rem 2rem;
+  
+    
+      &__btn--login{
+       display:none;
+      }
+      &__logo{
+          order:-2;
+      }
+  
+      &.scroll {
+        height: 100px;
+        & .navbar__icon {
+          margin-top: 2rem;
+        }
+        & .navbar__logo {
+          margin-top: 2rem;
+        }
+      }
+      &__btn--login{
+  
+     }
+  
+      &__links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10rem 0;
+        width: 100vw;
+        height: 100vh;
+        font-size: 2rem;
+        color: white;
+        background-color: #272727;
+        transition: opacity 1.5s 0.2s, clip-path 2s 0.2s;
+        clip-path: circle(200px at top right);
+        //add the transition of each nav_link
+        &--li {
+          opacity: 0;
+          transform: translateX(100%);
+          width: 100%;
+          text-align: center;
+          transition: opacity 0.4s ease-in-out,
+            transform 1s cubic-bezier(0.175, 0.005, 0.32, 1.275);
+            &:last-child{
+                display:block;
+            }
+          a {
+            display: block;
+            padding: 2rem 0;
+          }
+          //changing the dely time of each li
+  
+          &:nth-of-type(1) {
+            transition-delay: 0.2s;
+          }
+          &:nth-of-type(2) {
+            transition-delay: 0.3s;
+          }
+          &:nth-of-type(3) {
+            transition-delay: 0.4s;
+          }
+          &:nth-of-type(4) {
+            transition-delay: 0.5s;
+          }
+        }
+      }
+  
+      &__icon {
+        //x animation of navbar
+        &__line {
+          animation: closedMid 0.8s backwards;
+          animation-direction: reverse;
+          &::before {
+            animation: closedTop 0.8s backwards;
+            animation-direction: reverse;
+          }
+          &::after {
+            animation: closedBtm 0.8s backwards;
+            animation-direction: reverse;
+          }
+        }
+        display: block;
+        &__line,
+        &__line::after,
+        &__line::before {
+          background-color: black;
+          width: 30px;
+          height: 3px;
+        }
+        &__line:before {
+          transform: translateY(-10px);
+        }
+        &__line:after {
+          transform: translateY(10px);
+        }
+      }
+      //the sibling selector selects only siblings after itself
+      &__btn:checked ~ .navbar__links {
+        opacity: 1;
+        //circle animation
+        clip-path: circle(100% at center);
+        li {
+          //transition of li
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity 0.4s ease-in-out 1s,
+            transform 0.6s cubic-bezier(0.175, 0.005, 0.32, 1.275);
+          //control the tranisition of each li
+          &:nth-of-type(1) {
+            transition-delay: 0.7s;
+          }
+          &:nth-of-type(2) {
+            transition-delay: 0.8s;
+          }
+          &:nth-of-type(3) {
+            transition-delay: 0.9s;
+          }
+          &:nth-of-type(4) {
+            transition-delay: 1s;
+          }
+        }
+      }
+      &__btn:checked ~ .navbar__icon {
+        border-radius: 50%;
+        animation: pulse 1s;
+  
+        //changing the color of the burger menu
+        .navbar__icon__line {
+          transition: 0.4s ease-in-out;
+  
+          background-color: white;
+          //adding the animation for the opening of the navbar
+          animation: openMid 0.8s forwards;
+          &::before {
+            background-color: white;
+            animation: openTop 0.8s forwards;
+          }
+          &::after {
+            background-color: white;
+            animation: openBtm 0.8s forwards;
+          }
+        }
+      }
+      
+    }
+    
+   
+  }
+  

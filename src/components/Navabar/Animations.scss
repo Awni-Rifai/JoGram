@@ -1,0 +1,107 @@
+//?----------------------------NAVBAR ANIMATIONS--------------------------
+
+
+//pulse animations for the icon menu of the navbar
+@keyframes pulse{
+    from{
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.6) ;
+        background:rgba(255, 255, 255, 0.6) ;
+    }
+    to{
+        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) ;
+        background: rgba(255, 255, 255, 0) ;
+
+
+    }
+}
+//animations for the closing and opening of the navbar menu
+@keyframes openTop{
+    0%{
+        transform: translateY(-10px) rotate(0deg);
+        
+    }
+    //collapsing the top line
+    50%{
+        transform: translateY(0px) rotate(0deg);
+        
+    }
+    100%{
+        transform: translateY(0px) rotate(90deg);
+        
+    }
+}
+@keyframes openMid{
+    
+    //we need 50% for the mid only
+        50%{
+        transform:  rotate(0deg);
+        
+    }
+    100%{
+        transform:  rotate(45deg);
+        
+    }
+}
+@keyframes openBtm{
+    0%{
+        transform: translateY(10px) rotate(0deg);
+        
+    }
+    //collapsing the top line
+    50%{
+        transform: translateY(0px) rotate(0deg);
+        
+    }
+    100%{
+        //here we rotate the pesudo element 90 not 135deg since we rotated the 
+        //main element 45deg which will rotate the pesudo element
+        transform: translateY(0px) rotate(90deg);
+        
+    }
+}
+//the close animations are the same as open animations but they just run in reverse
+@keyframes closedTop{
+    0%{
+        transform: translateY(-10px) rotate(0deg);
+        
+    }
+    //collapsing the top line
+    50%{
+        transform: translateY(0px) rotate(0deg);
+        
+    }
+    100%{
+        transform: translateY(0px) rotate(90deg);
+        
+    }
+}
+@keyframes closedMid{
+    
+    //we need 50% for the mid only
+        50%{
+        transform:  rotate(0deg);
+        
+    }
+    100%{
+        transform:  rotate(45deg);
+        
+    }
+}
+@keyframes closedBtm{
+    0%{
+        transform: translateY(10px) rotate(0deg);
+        
+    }
+    //collapsing the top line
+    50%{
+        transform: translateY(0px) rotate(0deg);
+        
+    }
+    100%{
+        //here we rotate the pesudo element 90 not 135deg since we rotated the 
+        //main element 45deg which will rotate the pesudo element
+        transform: translateY(0px) rotate(90deg);
+        
+    }
+}
+//?----------------------------NAVBAR ANIMATIONS END--------------------------
